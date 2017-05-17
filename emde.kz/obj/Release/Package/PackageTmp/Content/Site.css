@@ -1,0 +1,416 @@
+﻿body {
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+}
+
+.navbar {
+    background-color: #54769B;
+    height: 86px;
+    border-radius: 0;
+    border-bottom-color:#54769B;
+    box-shadow: 0 3px 5px #54769B;
+}
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 20px;
+  font-weight:600;
+  margin-top: 18px;
+  color: #fff;
+  opacity: 1; 
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  opacity: 0.9;
+  background-color: transparent;
+}
+
+.pulse {
+    width: 100px;
+    height: 100px;
+}
+
+header {
+    height: 90px;
+    width: 1600px;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+.main-icon {
+    color: white;
+    vertical-align: middle; 
+    font-size: 18px;
+    font-weight: 700;
+    font-family: _Montserrat; 
+    position: relative;
+}
+
+    .main-icon:hover {
+        color: #4d5567;
+    }
+
+
+.section-text, .user-confirm > p {
+    font-family: _Roboto,sans-serif;
+    color: #a09c9c;
+    line-height: 1.5;
+    max-width: 80%;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.section-header {
+    font-family: _Montserrat,sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #e64343;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+footer {
+    height: 200px;
+    padding: 25px 0 0 105px;
+    font: bold 13px _Roboto,sans-serif;
+    background-color: #4d5567;
+    color: lightgrey;
+}
+
+.footer-left {
+    float: left;
+}
+
+.footer-right {
+    float:right;
+    padding: 120px 30px 0 0;
+}
+
+.main-icon-footer {
+    font: bold 15px _Roboto,sans-serif;
+    color: lightgrey;
+}
+    .main-icon-footer:hover {
+        text-decoration:none;
+        color: white;
+    }
+
+.social {
+    width: 33px;
+    height: 33px;
+    opacity: 0.5;
+}
+
+.social:hover{
+    opacity: 1;
+}
+
+.search{
+    color: #5d6475;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    line-height: 1.6em;
+
+}
+
+.search-country, .search-company {
+    margin-left: 80px;
+}
+
+.search-line {
+    width: 100%;
+    line-height: 38px;
+    max-width: 800px;
+    font-size: 18px;
+    padding-left: 10px;
+    box-shadow: 2px 2px 10px grey;
+    border: 0;
+    border-radius: 0;
+}
+
+
+.knopkasearch{
+    padding: 10px 10px;
+    color: #fff;
+    background-color: grey;
+    font-size: 16px;
+    font-weight: 600;
+    width: 250px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    border: 0;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.knopkasearch:hover{
+    background-color:#4d5567;
+}
+
+.about, .contact {
+    height: 750px;
+}
+
+.contact {
+    padding-top: 50px;
+}
+
+.main-search {
+    opacity:0.9; 
+    padding-top:100px; 
+    padding-bottom:30px; 
+    padding-left:20px;
+}
+
+.medicine-img {
+    width: 90%;
+    height: 160px;
+}
+
+label {
+    font: bold 14px 'Raleway', sans-serif;
+    color: #5d6475;
+    margin-right: 5px;
+}
+
+.details-name, .details_name {
+    font: bold 17px 'Raleway', sans-serif;
+    color: black;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+    .details-name:hover {
+        color: black;
+    }
+
+.medicines {
+    margin-top: 155px;
+}
+
+div > h4 {
+    margin-bottom:15px;    
+}
+
+.details-info {
+    width: 75%;
+    margin-bottom: 40px;
+}
+
+.instruction {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+
+ #breadcrumbs-two{
+      /* Clear floats */
+      margin-top: 50px;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    #breadcrumbs-two li{
+      list-style-type: none; 
+      float: left;
+      margin: 0 .5em 0 1em;
+    }
+    
+    #breadcrumbs-two a{
+      background: #ddd;
+      padding: .7em 1em;
+      float: left;
+      text-decoration: none;
+      color: #444;
+      text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+      position: relative;
+    }
+    
+    #breadcrumbs-two a:hover{
+      background: #e64343;
+      color: white;
+    }
+    
+    #breadcrumbs-two a::before{
+      content: "";
+      position: absolute;
+      top: 50%; 
+      margin-top: -1.5em;   
+      border-width: 1.5em 0 1.5em 1em;
+      border-style: solid;
+      border-color: #ddd #ddd #ddd transparent;
+      left: -1em;
+    }
+    
+    #breadcrumbs-two a:hover::before{
+      border-color: #e64343 #e64343 #e64343 transparent;
+    }
+    
+    #breadcrumbs-two a::after{
+      content: "";
+      position: absolute;
+      top: 50%; 
+      margin-top: -1.5em;   
+      border-top: 1.5em solid transparent;
+      border-bottom: 1.5em solid transparent;
+      border-left: 1em solid #ddd;
+      right: -1em;
+    }
+    
+    #breadcrumbs-two a:hover::after{
+      border-left-color: #e64343;
+    }
+    
+    #breadcrumbs-two .current,
+    #breadcrumbs-two .current:hover{
+      font-weight: bold;
+      background: none;
+      padding: .7em 1em;
+      float: left;
+      text-decoration: none;
+      color: #444;
+      position: relative;
+    }
+    
+    #breadcrumbs-two .current::after,
+    #breadcrumbs-two .current::before{
+      content: normal;
+    }
+
+.user-confirm > p {
+    max-width: 80%;
+    font-size: 18px;
+}
+
+.user-confirm {
+    margin-left: 100px;
+    padding-bottom: 100px;
+}
+
+.section-user {
+    font-family: _Montserrat,sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #e64343;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.mail:hover {
+    text-decoration: none;
+}
+
+.property_item {
+    height:130px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 15px 0px 15px 10px;
+    font-size: 12px;
+    cursor:pointer;
+    background-color: #fff;
+    max-width: 95%;
+}
+
+.search-hospital {
+    margin-bottom: 80px;
+}
+
+.details-name-hospital {
+    font: bold 15px 'Raleway', sans-serif;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+.details-hospital {
+    margin-top: 75px;
+    margin-bottom: 150px;
+}
+
+.details-hospital-h1 {
+    margin-top: 155px;
+    color: #e64343;
+}
+
+.details-hospital-item {
+    padding-top: 15px;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.modal-dialog {
+    width: 1120px;
+}
+
+.modal-title-site {
+    font:bold 20px _Montserrat,sans-serif;
+    font-weight: 700;
+    color: #e64343;
+}
+
+._2tga {
+    float: left;
+    margin-right: 5px;
+    width: 120px;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 28px;
+    padding: 0 4px 0 6px;
+    background-color: #54769B;
+    border: 1px solid #54769B;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+    ._2tga > a {
+        text-decoration: none;
+        color: white;
+    }
+._2tga:hover {
+    opacity: 1;
+}
+._3jn- {
+    height: 26px;
+    vertical-align: middle;
+    width: 26px;
+}
+
+ ._49vh,._2tga {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+}
+
+.fb {
+    margin-right: 5px;
+    float: left;
+}
+.tw {
+    float: left;
+}
+
+.comment {
+    margin-bottom: 100px;
+}
+
+.storage_condition {
+    margin-bottom: 30px;
+}

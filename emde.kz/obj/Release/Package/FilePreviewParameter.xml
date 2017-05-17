@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="emdeme" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="emde.kz.Models.MedicineDbContext-Web.config Connection String" description="" value="Data Source=emde.database.windows.net;Initial Catalog=MedicinesContext;User ID=Zhaslan;Password=Bjas1997" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='emde.kz.Models.MedicineDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="MedicinesContext-Web.config Connection String" description="" value="Data Source=emde.database.windows.net;Initial Catalog=MedicinesContext;User ID=Zhaslan;Password=Bjas1997" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MedicinesContext']/@connectionString" />
+  </parameter>
+</parameters>

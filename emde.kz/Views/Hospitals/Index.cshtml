@@ -1,0 +1,72 @@
+﻿@model IEnumerable<emde.kz.Models.Hospital>
+
+@{
+    ViewBag.Title = "emdeme - Больницы, клиники, НИИ";
+}
+@{
+    ViewBag.Description = "Cайт-справочник больниц, клиник и НИИ города Aлматы и других городов Kазахстана.";
+}
+@{
+    ViewBag.Image = "http://emdeme.azurewebsites.net/Images/pulse.png";
+}
+@{
+    ViewBag.Url = "http://emdeme.azurewebsites.net/Hospitals/Details";
+}
+<div class="main-search search-hospital">
+    @using (Html.BeginForm("Index", "Hospitals", FormMethod.Get))
+    {
+        <p class="search">
+            @Html.TextBox("searchHospital", null, new { @class = "search-line", @placeholder = "Название клиники, адрес" })
+            <input type="submit" value="Поиск" class="knopkasearch" />
+        </p>
+
+    }
+
+
+    @using (Html.BeginForm("Index", "Hospitals", FormMethod.Get))
+    {
+        <p class="search">
+            <label class="search">&#160;@Html.DropDownList("region", null, null, new { @class = "search-line" })</label>
+            <input type="submit" value="Поиск" class="knopkasearch" />
+        </p>
+    }
+
+</div>
+  
+@foreach (var item in Model)
+{
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" style="border-radius:0; box-shadow: 2px 2px 5px grey;" title="г.@Html.DisplayFor(modelItem => item.City.CityName)" data-target="#myModal">
+            Карта больниц и клиник г.@Html.DisplayFor(modelItem => item.City.CityName) 
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title modal-title-site" id="myModalLabel">Город @Html.DisplayFor(modelItem => item.City.CityName)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <script type="text/javascript" charset="utf-8" async src="@Html.DisplayFor(modelItem => item.City.SrcYandexCity)"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    break;
+}
+<div class="row" style="margin-bottom: 200px; margin-top: 30px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 property_item">
+            <p>@Html.ActionLink(@item.Name, "Details", new { id = item.ID }, new { @class = "details-name-hospital" })</p>
+            <p>
+                <label>Город:</label>@Html.DisplayFor(modelItem => item.City.CityName) <br />
+                <label>Адрес:</label>@Html.DisplayFor(modelItem => item.Address) <br />
+                <label>Телефон:</label>@Html.DisplayFor(modelItem => item.PhoneNumber)
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    }
+</div>
+  

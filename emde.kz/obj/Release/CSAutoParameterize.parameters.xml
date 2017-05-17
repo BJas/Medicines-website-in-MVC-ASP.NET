@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MedicinesContext-Web.config Connection String" description="MedicinesContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=emde.kz2;Integrated Security=SSPI;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MedicinesContext']/@connectionString" />
+  </parameter>
+  <parameter name="emde.kz.Models.MedicineDbContext-Web.config Connection String" description="emde.kz.Models.MedicineDbContext Connection String used in web.config by the application to access the database." defaultValue="emde.kz.Models.MedicineDbContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\super\\Documents\\Visual\ Studio\ 2013\\Projects\\emde\.kz\\emde\.kz\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='emde.kz.Models.MedicineDbContext']/@connectionString" />
+  </parameter>
+</parameters>

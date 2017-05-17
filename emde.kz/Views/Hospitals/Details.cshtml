@@ -1,0 +1,83 @@
+﻿@model emde.kz.Models.Hospital
+
+@{
+    ViewBag.Title = "emdeme - " + Html.DisplayFor(model => model.Name);
+}
+@{
+    ViewBag.Description = "г." + Html.DisplayFor(model => model.City.CityName) + ", " + Html.DisplayFor(model => model.Address) + "; Телефон: " + Html.DisplayFor(model => model.PhoneNumber);
+}
+@{
+    ViewBag.Image = "http://emdeme.azurewebsites.net/Images/pulse.png";
+}
+@{
+    ViewBag.Url = "http://emdeme.azurewebsites.net/Hospitals/Details/" + Html.DisplayFor(model => model.ID);
+}
+<div style="margin-top: 80px;">
+    <ul id="breadcrumbs-two">
+        <li>@Html.ActionLink("Больницы и клиники", "Index", "Hospitals")</li>
+        <li class="current">@Html.DisplayFor(model => model.Name)</li>
+    </ul>
+
+    <div style="float: right;">
+        <div class="_2tga">
+            <a href="https://vk.com/share.php?url=@ViewBag.Url" target="_blank">
+                <span class="_49vg">
+                    <img class="._3jn-" src="~/Images/vklogo.png" alt="" width="26" height="26">
+                </span>
+                <span class="_49vh _2pi7">Поделиться</span>
+            </a>
+        </div>
+        <div class="fb">
+            <div class="fb-share-button" data-href="@ViewBag.Url" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Femdeme.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        </div>
+        <div class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a></div>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    </div>
+
+    <h1 class="details-hospital-h1"><b>@Html.DisplayFor(model => model.Name)</b></h1>
+    <div class="row details-hospital">
+        <div class="col-md-4">
+            <script type="text/javascript" charset="utf-8" async src="@Html.DisplayFor(model => model.SrcYandex)"></script>
+            <button type="button" class="btn btn-primary" style="border-radius: 0; box-shadow: 2px 2px 5px grey; font-weight: 600; margin-left: 102px; margin-top: 20px;" data-toggle="modal" data-target=".bs-example-modal-lg">Увеличить карту</button>
+
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <button type="button" class="close" style="float: right; margin: 10px 20px 0 0; color: white;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-dialog modal-lg" role="document" style="margin-top: 13px;">
+                    <div class="modal-content">
+                        <script type="text/javascript" charset="utf-8" async src="@Html.DisplayFor(model => model.SrcYandexLarge)"></script>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 details-hospital-item">
+            <p><label class="details_name">Город:</label> @Html.DisplayFor(model => model.City.CityName)</p>
+            <p><label class="details_name">Адрес:</label> @Html.DisplayFor(model => model.Address)</p>
+            <p><label class="details_name">Телефон:</label> @Html.DisplayFor(model => model.PhoneNumber)</p>
+            @if (@Html.DisplayFor(model => model.Website).ToString() == "нет информации")
+            {
+                <p><label class="details_name">Веб-сайт:</label> @Html.DisplayFor(model => model.Website)</p>
+            }
+            else
+            {
+                <p><label class="details_name">Веб-сайт:</label> <a href="@Html.DisplayFor(model => model.Website)" target="_blank">@Html.DisplayFor(model => model.Website)</a></p>
+            }
+            @if (@Html.DisplayFor(model => model.Email).ToString() == "нет информации")
+            {
+                <p><label class="details_name">Email:</label> @Html.DisplayFor(model => model.Email)</p>
+            }
+            else
+            {
+                <p><label class="details_name">Email:</label> <a href="mailto:@Html.DisplayFor(model => model.Email)" target="_blank">@Html.DisplayFor(model => model.Email)</a></p>
+            }
+        </div>
+    </div>
+    <div class="comment">
+        <script type="text/javascript">
+            VK.init({ apiId: 5679959, onlyWidgets: true });
+        </script>
+        <div id="vk_comments"></div>
+        <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", { limit: 10, width: "665", attach: "*" });
+        </script>
+    </div>
+</div>

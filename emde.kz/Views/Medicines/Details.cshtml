@@ -1,0 +1,120 @@
+﻿@model emde.kz.Models.Medicine
+
+@{
+    ViewBag.Title = "emdeme - " + Html.DisplayFor(model => model.Name);
+}
+@{
+    ViewBag.Description = Html.DisplayFor(model => model.Name) + " - " + Html.DisplayFor(model => model.Type) + "; " + Html.DisplayFor(model => model.PharmaAction);
+}
+@{
+    ViewBag.Image = "http://emdeme.azurewebsites.net/imgMed/"+Html.DisplayFor(model => model.ID)+".jpg";
+}
+@{
+    ViewBag.Url = "http://emdeme.azurewebsites.net/Medicines/Details/" + Html.DisplayFor(model => model.ID);
+}
+<div class="comment" style="margin-top: 80px;">
+    <ul id="breadcrumbs-two">
+        <li>@Html.ActionLink("Лекарства", "Index", "Medicines")</li>
+        <li class="current">@Html.DisplayFor(model => model.Name)</li>
+    </ul> 
+    <div style="float: right;">
+        <div class="_2tga">
+            <a href="https://vk.com/share.php?url=@ViewBag.Url" target="_blank">
+                <span class="_49vg">
+                    <img class="._3jn-" src="~/Images/vklogo.png" alt="" width="26" height="26">
+                </span>
+                <span class="_49vh _2pi7">Поделиться</span>
+            </a>
+        </div>
+        <div class="fb">
+            <div class="fb-share-button" data-href="@ViewBag.Url" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Femdeme.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        </div>
+        <div class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a></div>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    </div>
+
+    <div class="row medicines">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2">
+            <img src="@Html.DisplayFor(model => model.Image)" alt="Medicine" class="medicine-img" />
+        </div>
+        <div class="col-md-9">
+            <p><label class="details_name">Название:</label> @Html.DisplayFor(model => model.Name)</p>
+            <p><label class="details_name">Международное наименование:</label> @Html.DisplayFor(model => model.InternationalName)</p>
+            <p><label class="details_name">Тип:</label> @Html.DisplayFor(model => model.Type)</p>
+            <p><label class="details_name">Страна:</label> @Html.DisplayFor(model => model.Country)</p>
+            <p><label class="details_name">Производитель:</label> @Html.DisplayFor(model => model.Company)</p>    
+            <p><label class="details_name">Пo рецепту:</label> @Html.DisplayFor(model => model.Recipe)</p>
+        </div>
+    </div>
+   
+    <h1 class="section-header instruction">Инструкция</h1>
+
+        <p class="details_name">
+            Состав
+        </p>
+
+        <p class="details-info">
+            @Html.DisplayFor(model => model.Component)
+        </p>
+
+        <p class="details_name">
+            Фармакологическое действие
+        </p>
+
+    <p class="details-info">
+        @Html.DisplayFor(model => model.PharmaAction)
+    </p>
+
+        <p class="details_name">
+            Противопоказания
+        </p>
+
+    <p class="details-info">
+        @Html.DisplayFor(model => model.Contrindiction)
+    </p>
+
+        <p class="details_name">
+            Побочные действия
+        </p>
+
+    <p class="details-info">
+        @Html.DisplayFor(model => model.Effect)
+    </p>
+
+        <p class="details_name">
+           Методы применения   
+        </p>
+
+    <p class="details-info">
+        @Html.DisplayFor(model => model.MethodsOfUse)
+    </p>
+    <p class="storage_condition">
+        <span class="details_name">
+            Условия хранения:&#160;&#160;
+        </span>
+
+        <span class="details-info">
+            @Html.DisplayFor(model => model.StorageCondition)
+        </span>
+    </p>
+    <p>
+        <span class="details_name">
+            Дозировка:&#160;&#160;
+        </span>
+        <span class="details-info">
+            @Html.DisplayFor(model => model.Dosage)
+        </span>
+    </p>
+</div>
+<div class="comment" style="margin-left: 135px;">
+    <script type="text/javascript">
+        VK.init({ apiId: 5679959, onlyWidgets: true });
+    </script>
+    <div id="vk_comments"></div>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", { limit: 10, width: "665", attach: "*" });
+    </script>
+</div>
+

@@ -1,0 +1,23 @@
+User-agent: Yandex
+Disallow: 
+Host: emdeme.azurewebsites.net
+Sitemap: http://emdeme.azurewebsites.net/sitemap.xml
+#для Yandex
+
+User-agent: Googlebot
+Disallow: 
+Host: emdeme.azurewebsites.net
+Sitemap: http://emdeme.azurewebsites.net/sitemap.xml
+#для Google
+
+User-agent: Mail.RU_Bot
+Disallow: 
+Host: emdeme.azurewebsites.net
+Sitemap: http://emdeme.azurewebsites.net/sitemap.xml
+#для mail.ru
+
+User-agent: *
+Disallow: 
+Host: emdeme.azurewebsites.net
+Sitemap: http://emdeme.azurewebsites.net/sitemap.xml
+#для всех

@@ -1,0 +1,51 @@
+﻿@model PagedList.IPagedList<emde.kz.Models.Medicine>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "emdeme - Лекарства";
+}
+@{
+    ViewBag.Description = "Cайт-справочник лекарственных препаратов, содержащий подробные описания и инструкции по применению лекарственных средств. Лекарственный справочник содержит товары фармацевтического рынка в Aлмате и других городах Kазахстана.";
+}
+@{
+    ViewBag.Image = "http://emdeme.azurewebsites.net/Images/pulse.png";
+}
+@{
+    ViewBag.Url = "http://emdeme.azurewebsites.net/";
+}
+
+<div class="main-search">
+    @using (Html.BeginForm("Index", "Medicines", FormMethod.Get))
+    {
+        <p class="search">
+            @Html.TextBox("searchMedicine", ViewBag.CurrentFilter as string, new { @class= "search-line", @placeholder="Название лекарств"})
+            <input type="submit" value="Поиск" class="knopkasearch" />
+        </p>
+    }
+</div>
+<br>
+<br>
+    
+    @foreach (var item in Model)
+        {
+        <div class="row medicines">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                    <img src="@item.Image" alt="Medicine" class="medicine-img" />
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Html.ActionLink(@item.Name, "Details", new { id = item.ID }, new { @class="details-name" })
+                </p>
+                <p><label>Международное наименование:</label> @item.InternationalName</p>
+                <p><label>Тип:</label> @item.Type</p>
+                <p><label>Страна:</label> @item.Country</p>
+                <p><label>Производитель:</label> @item.Company</p>
+            </div>
+         </div>
+        <hr style="width:85%">
+    }
+<br />
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

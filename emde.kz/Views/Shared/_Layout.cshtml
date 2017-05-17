@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="yandex-verification" content="1bb3f91d2d6b3ab2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewBag.Description">
+    <meta name="keywords" content="Больница, клиника, больницы Алматы, клиника Алматы, лекарства, инструкция лекарств">
+    <meta name="image" content="@ViewBag.Image" class="pulse" />
+    
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="@ViewBag.Image" />
+    <meta property="og:url" content="@ViewBag.Url" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image:width" content="100" />
+    <meta property="og:image:height" content="100" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="@ViewBag.Title" />
+    <meta name="twitter:description" content="@ViewBag.Description" />
+    <meta name="twitter:image" content="@ViewBag.Image" />
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?94" charset="windows-1251"></script>
+    <script src="https://vk.com/js/api/openapi.js?135" type="text/javascript"></script>
+    <link rel=" shortcut icon" href="~/Images/pulse.png">
+    <title> @ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=567111583481161";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+    </script>  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Лекарства", "Index", "Medicines", null, new { @class = "main-icon" })</li>
+                    <li>@Html.ActionLink("О Нас", "About", "Home", null, new { @class = "main-icon" })</li>
+                    <li>@Html.ActionLink("Больницы и клиники", "Index", "Hospitals", null, new { @class = "main-icon" })</li>
+                    <li>@Html.ActionLink("Пользовательское соглашение", "Contact", "Home", null, new { @class = "main-icon" })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="footer-left">
+            <p>@Html.ActionLink("Лекарства", "Index", "Medicines", null, new { @class = "main-icon-footer" })</p>
+            <p>@Html.ActionLink("О Нас", "About", "Home", null, new { @class = "main-icon-footer" })</p>
+            <p>@Html.ActionLink("Больницы и клиники", "Index", "Hospitals", null, new { @class = "main-icon-footer" })</p>
+            <p>@Html.ActionLink("Пользовательское соглашение", "Index", "Home", null, new { @class = "main-icon-footer" })</p>
+            <br /><br /><br />
+            <span>&copy; @DateTime.Now.Year - emdeme.azurewebsites.net</span>
+        </div>
+        <div class="footer-right">
+            <!-- HotLog -->
+            <span id="hotlog_counter"></span>
+            <span id="hotlog_dyn"></span>
+            <script type="text/javascript">
+             var hot_s = document.createElement('script');
+                hot_s.type = 'text/javascript'; hot_s.async = true;
+                hot_s.src = 'http://js.hotlog.ru/dcounter/2539436.js';
+                hot_d = document.getElementById('hotlog_dyn');
+                hot_d.appendChild(hot_s);
+            </script>
+            <noscript>
+                <a href="http://click.hotlog.ru/?2539436" target="_blank">
+                    <img src="http://hit19.hotlog.ru/cgi-bin/hotlog/count?s=2539436&im=407" border="0"
+                         title="HotLog" alt="HotLog">
+                </a>
+            </noscript>
+            <!-- /HotLog -->
+
+            <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-86693953-1', 'auto');
+                ga('send', 'pageview');
+            </script>
+
+            <!-- Yandex.Metrika counter -->
+            <script type="text/javascript">
+                (function (d, w, c) {
+                    (w[c] = w[c] || []).push(function () {
+                        try {
+                            w.yaCounter40609420 = new Ya.Metrika({
+                                id: 40609420,
+                                clickmap: true,
+                                trackLinks: true,
+                                accurateTrackBounce: true
+                            });
+                        } catch (e) { }
+                    });
+
+                    var n = d.getElementsByTagName("script")[0],
+                        s = d.createElement("script"),
+                        f = function () { n.parentNode.insertBefore(s, n); };
+                    s.type = "text/javascript";
+                    s.async = true;
+                    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                    if (w.opera == "[object Opera]") {
+                        d.addEventListener("DOMContentLoaded", f, false);
+                    } else { f(); }
+                })(document, window, "yandex_metrika_callbacks");
+            </script>
+            <noscript><div><img src="https://mc.yandex.ru/watch/40609420" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            <!-- /Yandex.Metrika counter -->
+
+            <!-- ZERO.kz -->
+            <span id="_zero_67854">
+                <noscript>
+                    <a href="http://zero.kz/?s=67854" target="_blank">
+                        <img src="http://c.zero.kz/z.png?u=67854" width="88" height="31" alt="ZERO.kz" />
+                    </a>
+                </noscript>
+            </span>
+
+            <script type="text/javascript">
+                var _zero_kz_ = _zero_kz_ || [];
+                _zero_kz_.push(["id", 67854]);
+                _zero_kz_.push(["type", 1]);
+
+            (function () {
+                var a = document.getElementsByTagName("script")[0],
+                s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = (document.location.protocol == "https:" ? "https:" : "http:")
+                + "//c.zero.kz/z.js";
+                a.parentNode.insertBefore(s, a);
+                })(); 
+           </script>
+            <!-- End ZERO.kz -->
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
